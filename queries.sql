@@ -1,0 +1,1 @@
+-- queries.sql contient les requêtes SELECT pour récupérer certaines données de la base
