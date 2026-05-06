@@ -36,3 +36,6 @@ SELECT * FROM resources;
 -- ('4','5');
 
 SELECT * FROM resources_skills;
+
+
+
