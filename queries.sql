@@ -26,7 +26,7 @@ SELECT resources.title FROM resources WHERE title ILIKE '%react%';
 -- [ ] Récupérer la liste des thèmes avec le nombre de ressources par thème
 SELECT themes.name, COUNT(resources.id) AS nb_of_resources FROM themes
 LEFT JOIN resources ON resources.theme_id = themes.id
-GROUP BY themes.name;
+GROUP BY themes.id, themes.name;
 
 -- [ ] Récupérer le nom et l'url de toutes les ressources avec un tableau/liste contenant l'ensemble de leurs skills associés
 
