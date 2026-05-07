@@ -1,7 +1,5 @@
 -- queries.sql contient les requêtes SELECT pour récupérer certaines données de la base
 
--- Dernière étape, récupérer les données. Écris les requêtes SQL de sélection suivantes :
-
 -- [ ] Récupérer la liste des thèmes
 SELECT themes.name FROM themes;
 
@@ -27,7 +25,7 @@ SELECT resources.title FROM resources WHERE title ILIKE '%react%';
 
 -- [ ] Récupérer la liste des thèmes avec le nombre de ressources par thème
 SELECT themes.name, COUNT(resources.id) AS nb_of_resources FROM themes
-JOIN resources ON resources.theme_id = themes.id
+LEFT JOIN resources ON resources.theme_id = themes.id
 GROUP BY themes.name;
 
 -- [ ] Récupérer le nom et l'url de toutes les ressources avec un tableau/liste contenant l'ensemble de leurs skills associés
@@ -48,10 +46,8 @@ LIMIT 3;
 
 -- [ ] Récupérer toutes les compétences qui ne sont associées à aucune ressource
 
-INSERT INTO skills (name) VALUES 
+INSERT INTO skills (name) VALUES
 ('HTML');
-
-SELECT * FROM skills;
 
 SELECT skills.id, skills.name FROM skills
 LEFT JOIN resources_skills ON skills.id = resources_skills.skill_id
