@@ -41,7 +41,7 @@ CREATE TABLE resources_skills (
     skill_id INT,
     PRIMARY KEY (resource_id, skill_id),
     CONSTRAINT "fk_resource" FOREIGN KEY (resource_id)
-        REFERENCES resources (id),
+        REFERENCES resources (id) ON DELETE CASCADE
     CONSTRAINT "fk_skill" FOREIGN KEY (skill_id)
         REFERENCES skills (id) ON DELETE CASCADE
 );
